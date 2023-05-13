@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  reservation:
+    build: .
+    restart: always
+    ports:
+      - 8085:8085
+    environment:
+      eureka.client.service-url.defaultZone: http://airline:8761/eureka
+
+networks:
+  default:
+    name: service-discovery_default
